@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PathAI – Your AI Learning Navigator</title>
+    <meta name="description"
+        content="Discover personalized AI-driven learning paths based on your goals, skill level, and interests. Learn smarter, not harder." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">⚡</div>
+            <span class="nav-title">PathAI</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="explore">Explore</a>
+            <a href="#" class="nav-link" data-page="my-paths">My Paths</a>
+            <a href="#" class="nav-link" data-page="progress">Progress</a>
+        </div>
+        <div class="nav-actions" id="navActions">
+            <button class="btn-secondary" id="notifBtn">🔔</button>
+            <div class="avatar" id="userAvatar" style="display:none">A</div>
+        </div>
+    </nav>
+
+    <!-- PAGES -->
+    <main id="app">
+
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page active">
+            <section class="hero">
+                <div class="hero-badge">✨ AI-Powered Learning</div>
+                <h1 class="hero-title">Discover Your Perfect <span class="gradient-text">Learning Path</span></h1>
+                <p class="hero-sub">Tell us your goals. We'll build a personalized roadmap using AI — from beginner to
+                    expert, step by step.</p>
+                <div class="hero-cta">
+                    <button class="btn-primary" id="startJourneyBtn">Start Your Journey →</button>
+                    <button class="btn-ghost" id="exploreBtn">Browse Paths</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Learners</span></div>
+                    <div class="stat-div"></div>
+                    <div class="stat"><span class="stat-num">2,400+</span><span class="stat-label">Resources</span>
+                    </div>
+                    <div class="stat-div"></div>
+                    <div class="stat"><span class="stat-num">150+</span><span class="stat-label">Learning Paths</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ONBOARDING WIZARD -->
+            <section class="wizard-section" id="wizardSection" style="display:none">
+                <div class="wizard-card">
+                    <div class="wizard-progress-bar">
+                        <div class="wizard-progress-fill" id="wizardProgressFill"></div>
+                    </div>
+                    <div class="wizard-steps">
+                        <!-- Step 1 -->
+                        <div class="wizard-step active" id="step1">
+                            <div class="step-icon">🎯</div>
+                            <h2>What's your main learning goal?</h2>
+                            <p class="step-sub">Select all that apply</p>
+                            <div class="option-grid" id="goalGrid">
+                                <div class="option-card" data-value="career-change">💼 Career Change</div>
+                                <div class="option-card" data-value="skill-upgrade">📈 Skill Upgrade</div>
+                                <div class="option-card" data-value="hobby">🎨 Personal Hobby</div>
+                                <div class="option-card" data-value="academic">🎓 Academic Study</div>
+                                <div class="option-card" data-value="entrepreneurship">🚀 Entrepreneurship</div>
+                                <div class="option-card" data-value="certifications">📜 Certification Prep</div>
+                            </div>
+                            <button class="btn-primary wizard-next" data-step="1">Continue →</button>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="wizard-step" id="step2">
+                            <div class="step-icon">💡</div>
+                            <h2>What topics interest you most?</h2>
+                            <p class="step-sub">Choose your domain</p>
+                            <div class="topic-grid" id="topicGrid">
+                                <div class="topic-card" data-value="ai-ml"><span class="tc-icon">🤖</span><span>AI &
+                                        Machine Learning</span></div>
+                                <div class="topic-card" data-value="web-dev"><span class="tc-icon">🌐</span><span>Web
+                                        Development</span></div>
+                                <div class="topic-card" data-value="data-science"><span
+                                        class="tc-icon">📊</span><span>Data Science</span></div>
+                                <div class="topic-card" data-value="cybersecurity"><span
+                                        class="tc-icon">🔒</span><span>Cybersecurity</span></div>
+                                <div class="topic-card" data-value="cloud"><span class="tc-icon">☁️</span><span>Cloud
+                                        Computing</span></div>
+                                <div class="topic-card" data-value="mobile"><span class="tc-icon">📱</span><span>Mobile
+                                        Dev</span></div>
+                                <div class="topic-card" data-value="design"><span class="tc-icon">🎨</span><span>UI/UX
+                                        Design</span></div>
+                                <div class="topic-card" data-value="devops"><span
+                                        class="tc-icon">⚙️</span><span>DevOps</span></div>
+                                <div class="topic-card" data-value="blockchain"><span
+                                        class="tc-icon">⛓️</span><span>Blockchain</span></div>
+                            </div>
+                            <button class="btn-primary wizard-next" data-step="2">Continue →</button>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="wizard-step" id="step3">
+                            <div class="step-icon">🏋️</div>
+                            <h2>What's your current skill level?</h2>
+                            <p class="step-sub">Be honest — we'll tailor the path perfectly</p>
+                            <div class="skill-levels" id="skillGrid">
+                                <div class="skill-card" data-value="beginner">
+                                    <div class="skill-ring beginner-ring"></div>
+                                    <div class="skill-info">
+                                        <h3>Beginner</h3>
+                                        <p>Just starting out, limited experience</p>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-value="intermediate">
+                                    <div class="skill-ring intermediate-ring"></div>
+                                    <div class="skill-info">
+                                        <h3>Intermediate</h3>
+                                        <p>Some experience, want to deepen skills</p>
+                                    </div>
+                                </div>
+                                <div class="skill-card" data-value="advanced">
+                                    <div class="skill-ring advanced-ring"></div>
+                                    <div class="skill-info">
+                                        <h3>Advanced</h3>
+                                        <p>Strong foundation, ready for mastery</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn-primary wizard-next" data-step="3">Continue →</button>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="wizard-step" id="step4">
+                            <div class="step-icon">⏱️</div>
+                            <h2>How much time can you dedicate?</h2>
+                            <div class="time-options" id="timeGrid">
+                                <div class="time-card" data-value="1-2"><span
+                                        class="time-num">1-2</span><span>hrs/week</span><span
+                                        class="time-tag">Casual</span></div>
+                                <div class="time-card" data-value="3-5"><span
+                                        class="time-num">3-5</span><span>hrs/week</span><span
+                                        class="time-tag">Regular</span></div>
+                                <div class="time-card" data-value="6-10"><span
+                                        class="time-num">6-10</span><span>hrs/week</span><span
+                                        class="time-tag">Focused</span></div>
+                                <div class="time-card" data-value="10+"><span
+                                        class="time-num">10+</span><span>hrs/week</span><span
+                                        class="time-tag">Intensive</span></div>
+                            </div>
+                            <button class="btn-primary" id="generatePathBtn">✨ Generate My Path</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GENERATED PATH SECTION -->
+            <section class="path-result" id="pathResult" style="display:none">
+                <div class="path-header">
+                    <div class="path-badge">🎉 Your Personalized Path</div>
+                    <h2 id="pathTitle">AI & Machine Learning Mastery</h2>
+                    <p id="pathDesc">A curated 12-week journey from fundamentals to deploying real-world AI systems</p>
+                    <div class="path-meta">
+                        <span class="meta-chip">📅 12 Weeks</span>
+                        <span class="meta-chip">📚 24 Resources</span>
+                        <span class="meta-chip">🏆 3 Certificates</span>
+                        <span class="meta-chip" id="difficultyChip">⚡ Intermediate</span>
+                    </div>
+                </div>
+                <div class="path-roadmap" id="pathRoadmap"></div>
+                <div class="path-resources">
+                    <h3>📦 Recommended Resources</h3>
+                    <div class="resource-grid" id="resourceGrid"></div>
+                </div>
+                <div class="path-actions">
+                    <button class="btn-primary" id="savePathBtn">💾 Save This Path</button>
+                    <button class="btn-secondary" id="regenerateBtn">🔄 Regenerate</button>
+                    <button class="btn-ghost" id="sharePath">📤 Share</button>
+                </div>
+            </section>
+
+            <!-- FEATURED PATHS -->
+            <section class="featured-section" id="featuredSection">
+                <div class="section-header">
+                    <h2>🔥 Trending Learning Paths</h2>
+                    <button class="btn-link" id="viewAllPaths">View All</button>
+                </div>
+                <div class="paths-carousel" id="featuredPaths"></div>
+            </section>
+        </div>
+
+        <!-- EXPLORE PAGE -->
+        <div id="page-explore" class="page">
+            <div class="page-header">
+                <h1>Explore Resources</h1>
+                <p>Browse 2,400+ curated learning materials</p>
+            </div>
+            <div class="search-bar">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Search courses, tutorials, topics..." />
+                <button class="btn-primary search-btn" id="searchBtn">Search</button>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-chip active" data-filter="all">All</button>
+                <button class="filter-chip" data-filter="course">Courses</button>
+                <button class="filter-chip" data-filter="video">Videos</button>
+                <button class="filter-chip" data-filter="tutorial">Tutorials</button>
+                <button class="filter-chip" data-filter="doc">Docs</button>
+                <button class="filter-chip" data-filter="free">Free Only</button>
+            </div>
+            <div class="resource-cards" id="exploreResources"></div>
+        </div>
+
+        <!-- MY PATHS PAGE -->
+        <div id="page-my-paths" class="page">
+            <div class="page-header">
+                <h1>My Learning Paths</h1>
+                <p>Continue where you left off</p>
+            </div>
+            <div class="my-paths-grid" id="myPathsGrid"></div>
+        </div>
+
+        <!-- PROGRESS PAGE -->
+        <div id="page-progress" class="page">
+            <div class="page-header">
+                <h1>Progress Dashboard</h1>
+                <p>Track your learning journey</p>
+            </div>
+            <div class="progress-overview" id="progressOverview"></div>
+            <div class="progress-charts" id="progressCharts"></div>
+            <div class="achievements-section" id="achievementsSection"></div>
+        </div>
+
+    </main>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
