@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Message Sent! – SkillRoute AI</title>
+    <meta name="description" content="Your message has been received. The SkillRoute AI team will be in touch soon." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .success-wrapper {
+            min-height: calc(100vh - 64px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+        }
+        .success-card {
+            background: var(--card);
+            border: 1px solid rgba(74, 222, 128, 0.25);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: var(--shadow), 0 0 60px rgba(74,222,128,0.07);
+            animation: popIn .5s cubic-bezier(.34,1.56,.64,1);
+        }
+        .success-icon-wrap {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(74, 222, 128, 0.12);
+            border: 2px solid rgba(74, 222, 128, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            margin: 0 auto 1.75rem;
+            animation: pulse 2s ease infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.25); }
+            50%       { box-shadow: 0 0 0 14px rgba(74,222,128,0); }
+        }
+        .success-card h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--green);
+            margin-bottom: .75rem;
+        }
+        .success-card p {
+            color: var(--text2);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            align-items: center;
+        }
+        .success-actions a {
+            text-decoration: none;
+            width: 100%;
+            max-width: 280px;
+            text-align: center;
+            display: block;
+            padding: .75rem 1.8rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        .detail-chips {
+            display: flex;
+            justify-content: center;
+            gap: .6rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .d-chip {
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: .3rem .85rem;
+            font-size: .8rem;
+            color: var(--text2);
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(.85); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">⚡</div>
+            <span class="nav-title">SkillRoute AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+        <div class="nav-actions">
+            <a href="contact.html" class="btn-secondary nav-icon-btn" title="Contact Us">📞</a>
+            <a href="profile.html" class="btn-primary btn-sm">Login</a>
+        </div>
+    </nav>
+
+    <div class="success-wrapper">
+        <div class="success-card">
+            <div class="success-icon-wrap">✅</div>
+            <h1>Message Sent!</h1>
+            <p>Thank you for reaching out. Our team has received your message and will get back to you within <strong>24–48 hours</strong>.</p>
+
+            <div class="detail-chips">
+                <span class="d-chip">📧 Confirmation email sent</span>
+                <span class="d-chip">⏱ Response in 24–48 hrs</span>
+            </div>
+
+            <div class="success-actions">
+                <a href="index.html" class="btn-primary">🏠 Back to Home</a>
+                <a href="contact.html" class="btn-ghost">Send Another Message</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

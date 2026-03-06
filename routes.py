@@ -1,5 +1,5 @@
 """
-PathAI – API Routes
+SkillRoute AI – API Routes
 Handles path generation, resource searching, and progress updates
 """
 

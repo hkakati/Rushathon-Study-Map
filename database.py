@@ -1,5 +1,5 @@
 """
-PathAI – Database Initialisation & Dummy Data
+SkillRoute AI – Database Initialisation & Dummy Data
 In-memory SQLite database for the prototype
 """
 

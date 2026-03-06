@@ -1,5 +1,5 @@
 /* ================================================================
-   PathAI — Core Application Logic
+   SkillRoute AI — Core Application Logic
    AI Learning Path Navigator
    ================================================================ */
 
@@ -592,4 +592,4 @@ window.addEventListener('scroll', () => {
   if (nb) nb.style.boxShadow = window.scrollY > 10 ? '0 4px 30px rgba(0,0,0,.4)' : 'none';
 });
 
-console.log('🚀 PathAI loaded successfully!');
+console.log('🚀 SkillRoute AI loaded successfully!');

@@ -1,5 +1,5 @@
 """
-PathAI – Pydantic Models & Schemas
+SkillRoute AI – Pydantic Models & Schemas
 All request/response models for the API
 """
 
@@ -37,8 +37,8 @@ class PathGenerationRequest(BaseModel):
     time:       str             = Field("3-5", description="Weekly hours available e.g. '3-5'")
     user_id:    Optional[str]   = Field(None, description="Optional user ID for personalisation")
 
-    class Config:
-        schema_extra = {
+    model_config = {
+        "json_schema_extra": {
             "example": {
                 "goals":   ["career-change", "skill-upgrade"],
                 "topics":  ["ai-ml"],
@@ -47,6 +47,7 @@ class PathGenerationRequest(BaseModel):
                 "user_id": "user_001"
             }
         }
+    }
 
 
 class SearchRequest(BaseModel):

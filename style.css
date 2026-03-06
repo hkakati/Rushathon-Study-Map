@@ -1,5 +1,5 @@
 /* =========================================================
-   PathAI — AI Learning Path Navigator Stylesheet
+   SkillRoute AI — AI Learning Path Navigator Stylesheet
    ========================================================= */
 
 * {
@@ -129,6 +129,16 @@ body {
 
 .btn-secondary:hover {
     border-color: var(--primary);
+}
+
+.nav-icon-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1;
+    min-width: 36px;
 }
 
 /* ── MAIN ────────────────────────────────── */

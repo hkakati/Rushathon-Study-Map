@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – SkillRoute AI</title>
+    <meta name="description" content="Log in to your SkillRoute AI account and continue your learning journey." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .profile-wrapper {
+            min-height: calc(100vh - 64px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1rem;
+            position: relative;
+        }
+        .profile-wrapper::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 60% 30%, rgba(99,102,255,0.1) 0%, transparent 60%),
+                        radial-gradient(ellipse at 20% 80%, rgba(34,211,238,0.07) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .profile-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            width: 100%;
+            max-width: 440px;
+            box-shadow: var(--shadow), var(--glow);
+            animation: fadeIn .4s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .profile-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #6366f1, #22d3ee);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 20px rgba(99,102,255,0.35);
+        }
+        .profile-card h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: .4rem;
+        }
+        .profile-card .sub {
+            color: var(--text2);
+            text-align: center;
+            font-size: .9rem;
+            margin-bottom: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.1rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-size: .82rem;
+            font-weight: 600;
+            color: var(--text2);
+            margin-bottom: .4rem;
+            letter-spacing: .02em;
+        }
+        .form-group input {
+            width: 100%;
+            background: var(--card2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: .75rem 1rem;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: .95rem;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99,102,255,0.12);
+        }
+        .forgot-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: .3rem;
+        }
+        .forgot-row a {
+            font-size: .8rem;
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+        .forgot-row a:hover { text-decoration: underline; }
+        .login-btn {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: .85rem;
+            font-size: 1rem;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            color: var(--text3);
+            font-size: .82rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+        .social-btns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .75rem;
+        }
+        .social-btn {
+            background: var(--card2);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: .65rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: .88rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+        }
+        .social-btn:hover { border-color: var(--primary); }
+        .signup-link {
+            text-align: center;
+            margin-top: 1.75rem;
+            font-size: .88rem;
+            color: var(--text2);
+        }
+        .signup-link a {
+            color: var(--primary-light);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .signup-link a:hover { text-decoration: underline; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <div class="nav-logo">⚡</div>
+            <span class="nav-title">SkillRoute AI</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+        <div class="nav-actions">
+            <a href="contact.html" class="btn-secondary nav-icon-btn" title="Contact Us">📞</a>
+            <a href="profile.html" class="btn-primary btn-sm active">Login</a>
+        </div>
+    </nav>
+
+    <div class="profile-wrapper">
+        <div class="profile-card">
+            <div class="profile-logo">⚡</div>
+            <h1>Welcome Back</h1>
+            <p class="sub">Log in to continue your personalized learning journey</p>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="jane@example.com" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
+                    <div class="forgot-row">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary login-btn">Sign In →</button>
+            </form>
+
+            <div class="divider">or continue with</div>
+
+            <div class="social-btns">
+                <button class="social-btn">🌐 Google</button>
+                <button class="social-btn">🐙 GitHub</button>
+            </div>
+
+            <p class="signup-link">Don't have an account? <a href="#">Sign up free</a></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('.login-btn');
+            btn.textContent = '✓ Signed In!';
+            btn.style.background = 'linear-gradient(135deg, #4ade80, #22d3ee)';
+            setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+        });
+    </script>
+</body>
+</html>
